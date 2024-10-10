@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="plugins.css">
+</head>
+<body>
+    
+    <div id="reg">
+        <h3>User registration form</h3>
+        <form id="form" autocomplete="off">
+                 
+            <label>Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter full name">
+            <label>D.O.B</label>
+            <input type="text" name="dob" id="dob" placeholder="YYYY-MM-DD">
+            <label>Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <label>Password</label>
+            <input type="password" name="pass" id="pass" placeholder="Enter Your password">
+            <label>confirm Password</label>
+            <input type="password" name="cpass" id="cpass" placeholder="Enter confirm password">
+            <label>Contact No</label>
+            <input type="text" name="contact" id="contact" placeholder="Enter your contact number">
+            <button type="submit" name="submit" id="submit">Registe Now</button>
+        </form>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.validator.setDefaults({
+                submitHandler: function(){
+                    alert("submitted");
+                }
+            });
+            $("#form").validate({
+                rules:{
+                    name:"required",
+                    dob:{
+                        required:true,
+                        date:true
+                    },
+                    email:{
+                        required:true,
+                        email:true
+                    }, 
+                        pass:{
+                        required: true,
+                        minlength: 6
+                    },
+                    cpass:{
+                        required: true,
+                        equalTo: "#pass"
+                    }, 
+                    contact:{
+                        required: true,
+                        minlength: 10,
+                        digits: true,
+                        maxlength: 10,
+                    },
+                    messages:{
+                        name:"Enter ur name",
+                        dob:{
+                            required:"Pls,enter ur date of birth",
+                            date:"enter in correct date format"
+                        },
+                        email:{
+                            required:"Pls,enter ur valid email id",
+                            email:"enter in  valid id"
+                        },
+                        pass: {
+                            required: "Please provide a password",
+                            minlength: "Your password must be at least 6 characters long"
+                        },
+                        cpass: {
+                            required: "Please confirm your password",
+                            equalTo: "Passwords do not match"
+                        },
+                        contact: {
+                            required: "Please enter your contact number",
+                            minlength: "Your contact number must be at least 10 digits",
+                            digits: "Please enter only numbers",
+                            maxlength: "Your contact number must be at least 10 digits",
+                }
+                }
+
+                }
+            })
+        });
+    </script>
+</body>
+</html>

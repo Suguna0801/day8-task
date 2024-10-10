@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    margin: 0;
+    padding: 0;
+}
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+textarea {
+    height: 100px;
+}
+input[type="radio"] {
+    /* margin: 0 5px 0 0; */
+    margin: 10px;
+}
+#gender{
+    display: flex;
+
+}
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#signUpBtn {
+    background: linear-gradient(45deg, #56ccf2, #2f80ed);
+    color: white;
+}
+#backBtn {
+    background-color: #e0e0e0;
+}
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+footer a {
+    color: #2f80ed;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
